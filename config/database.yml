@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: irinazigalova
+  password: Durkheim13579
+  pool: 5
+
+development:
+  <<: *default
+  database: rorexam_development
+
+test:
+  <<: *default
+  database: rorexam_test
+
+production:
+  <<: *default
+  database: rorexam_production
