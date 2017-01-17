@@ -329,6 +329,7 @@ DEPENDENCIES
   guard
   guard-rspec (~> 4.6)
   haml-rails
+  html2haml
   jbuilder (~> 2.5)
   jquery-rails
   jquery-ui-rails
@@ -356,4 +357,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.6
+   1.13.7

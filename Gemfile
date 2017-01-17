@@ -11,6 +11,7 @@ gem 'activerecord-reset-pk-sequence'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 gem 'haml-rails'
+gem 'html2haml'
 gem 'bootstrap-sass', '3.3.6'
 
 # Use ActiveModel has_secure_password
@@ -88,13 +89,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Icons fonts
 gem 'font-awesome-sass'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
-
-
-
-
-
-
-
 
 group :production do
   # For Heroku deployment
