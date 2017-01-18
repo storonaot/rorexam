@@ -2,10 +2,10 @@
   .x-container.x-header
     .x-header__inner
       %nav.x-header__nav
-        %a.x-header__nav-item(href="#") Index
-        %a.x-header__nav-item(href="#") Help
-        %a.x-header__nav-item(href="#") Contacts
-        %a.x-header__nav-item(href="#") About
+        = link_to 'Index', root_path, :class => ['x-header__nav-item', current_page?(root_path) ? 'is-active' : '']
+        = link_to 'Help', help_path, :class => ['x-header__nav-item', current_page?(help_path) ? 'is-active' : '']
+        = link_to 'Contacts', contacts_path, :class => ['x-header__nav-item', current_page?(contacts_path) ? 'is-active' : '']
+        = link_to 'About', about_path, :class => ['x-header__nav-item', current_page?(about_path) ? 'is-active' : '']
       %nav.x-header__nav.x-header__nav--right
         .x-header__lang
           %a.x-header__lang-item(href="#") ru

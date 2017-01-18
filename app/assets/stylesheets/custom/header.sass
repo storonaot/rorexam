@@ -121,6 +121,20 @@
     font-size: 18px
     font-weight: 100
     letter-spacing: 0.1em
+    position: relative
+    &.is-active
+      &::before
+        content: ''
+        display: inline-block
+        position: absolute
+        width: 10px
+        height: 10px
+        background-color: #f7a735
+        transform: translateX(-50%)
+        left: 50%
+        top: -13px
+    &:first-child
+      margin-left: 0
     &:hover
       text-decoration: underline
   &__lang
@@ -150,9 +164,6 @@
     &.is-active
       .x-header__dropdown
         display: block
-    // &:hover
-    //   .x-header__mail
-    //     text-decoration: underline
   &__mail
     text-transform: lowercase
     font-weight: 100
