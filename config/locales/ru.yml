@@ -1,0 +1,18 @@
+ru:
+  shared:
+    header:
+      home: "Главная"
+      help: "Помощь"
+      sign_in: "Войти"
+      sign_out: "Выйти"
+      person: "Я"
+      profile: "Моя страница"
+      settings: "Настройки"
+      about: "О сайте"
+      contacts: "Контакты"
+  main:
+    contacts:
+      title: "Контакты"
+      paragraph_1: "Приложение Expertise разработано в качестве курсового проекта в рамках дисциплины «Применение альтернативных фреймвоков Ruby_on_Rails»."
+      paragraph_2: "Предложения по развитию приложения и улучшению его функциональности можно направлять по адресу:"
+      mail_to: "storonaot@gmail.com"

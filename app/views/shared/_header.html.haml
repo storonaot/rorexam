@@ -2,14 +2,18 @@
   .x-container.x-header
     .x-header__inner
       %nav.x-header__nav
-        = link_to 'Index', root_path, :class => ['x-header__nav-item', current_page?(root_path) ? 'is-active' : '']
-        = link_to 'Help', help_path, :class => ['x-header__nav-item', current_page?(help_path) ? 'is-active' : '']
-        = link_to 'Contacts', contacts_path, :class => ['x-header__nav-item', current_page?(contacts_path) ? 'is-active' : '']
-        = link_to 'About', about_path, :class => ['x-header__nav-item', current_page?(about_path) ? 'is-active' : '']
+        = link_to t('.home'), root_path, class: ['x-header__nav-item', current_page?(root_path) ? 'is-active' : '']
+        = link_to t('.about'), about_path, class: ['x-header__nav-item', current_page?(about_path) ? 'is-active' : '']
+        = link_to t('.help'), help_path, class: ['x-header__nav-item', current_page?(help_path) ? 'is-active' : '']
+        = link_to t('.contacts'), contacts_path, class: ['x-header__nav-item', current_page?(contacts_path) ? 'is-active' : '']
       %nav.x-header__nav.x-header__nav--right
         .x-header__lang
-          %a.x-header__lang-item(href="#") ru
-          %a.x-header__lang-item(href="#") en
+          - if locale == :ru
+            %span.x-header__lang-item ru
+            = link_to 'en', { locale: :en }, { class: 'x-header__lang-item is-disabled' }
+          - else
+            = link_to 'ru', { locale: :ru }, { class: 'x-header__lang-item is-disabled' }
+            %span.x-header__lang-item en
         -# .x-header__user.is-active
         .x-header__user
           .x-header__avatar
@@ -19,5 +23,3 @@
     .x-header__center
       .x-header__core
         .x-header__label exp
-
-      -# %div Я хедер

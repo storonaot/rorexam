@@ -4,7 +4,7 @@
   position: relative
   display: flex
   align-items: center
-  font-family: 'Oswald'
+  font-family: 'Fira Sans Extra Condensed'
   &::before, &::after
     content: ''
     position: absolute
@@ -114,7 +114,7 @@
       height: 100%
       align-items: center
   &__nav-item
-    margin-left: 10px
+    margin-left: 15px
     color: inherit
     text-decoration: none
     text-transform: uppercase
@@ -127,12 +127,13 @@
         content: ''
         display: inline-block
         position: absolute
-        width: 10px
-        height: 10px
-        background-color: #f7a735
-        transform: translateX(-50%)
+        transform: translateX(-50%) rotate(135deg)
         left: 50%
-        top: -13px
+        top: -18px
+        width: 0
+        height: 0
+        border-top: 10px solid #f7a735
+        border-left: 10px solid transparent
     &:first-child
       margin-left: 0
     &:hover
@@ -153,8 +154,13 @@
     text-decoration: none
     display: block
     text-transform: uppercase
-    &:hover
-      text-decoration: underline
+    cursor: default
+    &.is-disabled
+      color: rgba(239, 226, 198, 0.5)
+      &:hover
+        text-decoration: underline
+        color: #efe2c6
+        cursor: pointer
     & + &
       margin-left: 10px
   &__user
@@ -172,12 +178,16 @@
       text-decoration: underline
       cursor: pointer
     &::after
-      content: ''
-      width: 10px
-      height: 10px
+      content: ""
       display: inline-block
-      background-color: red
       margin-left: 10px
+      width: 0
+      height: 0
+      border-top: 6px solid #efe2c6
+      border-left: 6px solid transparent
+      transform: rotate(135deg)
+      top: -4px
+      position: relative
   &__avatar
     width: 40px
     height: 40px
