@@ -1,6 +1,4 @@
-footer
-  min-height: 100px
-.x-footer-top
+.x-footer
   position: relative
   &__inner
     background-color: #f8a835
@@ -12,6 +10,8 @@ footer
     padding: 30px 35px
     background-image: image_url('halftone-copy.png')
     background-repeat-y: no-repeat
+    display: flex
+    justify-content: space-between
     &::before, &::after
       content: ''
       position: absolute
@@ -27,3 +27,14 @@ footer
     &::after
       transform: rotate(180deg)
       right: 0
+  &__nav-item
+    color: inherit
+    margin-left: 10px
+    text-decoration: none
+    font-size: 0.9em
+    &:hover
+      color: #926d5b
+    &.is-active
+      text-decoration: underline
+  &__copyright
+    font-weight: 400

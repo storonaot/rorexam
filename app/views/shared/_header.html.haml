@@ -15,11 +15,40 @@
             = link_to 'ru', { locale: :ru }, { class: 'x-header__lang-item is-disabled' }
             %span.x-header__lang-item en
         -# .x-header__user.is-active
-        .x-header__user
-          .x-header__avatar
-          .x-header__mail(href="#") storonaot@gmail.com
-          .x-header__dropdown
-        -# %a.x-header__nav-item(href="#") About
+        -# .x-header__user
+        -#   .x-header__avatar
+        -#   .x-header__mail(href="#") storonaot@gmail.com
+        -#   .x-header__dropdown
+        - if signed_in?
+          .x-header__user.is-active
+          .x-header__user
+            .x-header__avatar
+            -# = gravatar_for current_user
+            .x-header__mail
+              #{current_user.email}
+            .x-header__dropdown
+        - else
+          = link_to t('.sign_in'), signin_path, class: 'x-header__nav-item'
+
     .x-header__center
       .x-header__core
         .x-header__label exp
+
+-#
+-# - if signed_in?
+-#   -#%li= link_to "Users", '#'
+-#   %li.logged
+-#     #{current_user.email}
+-#   = gravatar_for current_user
+-#   %li#fat-menu.dropdown
+-#     %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+-#       %p
+-#         = t('.person')
+-#         %b.caret
+-#     %ul.dropdown-menu
+-#       %li= link_to t('.profile'), current_user
+-#       %li= link_to t('.settings'), '#'
+-#       %li.divider
+-#       %li
+-#         = link_to t('.sign_out'), signout_path, method: "delete"
+-# - else

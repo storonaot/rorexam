@@ -10,9 +10,32 @@ en:
       settings: "Settings"
       about: "About"
       contacts: "Contacts"
+    footer:
+      about: "About"
+      contacts: "Contacts"
+      home: "Home"
+      help: "Help"
   main:
     contacts:
       title: "Contacts"
       paragraph_1: "Expertise application is developed as a course project in the discipline «The use of alternative frameworks with Ruby_on_Rails»"
       paragraph_2: "Proposals for the development of applications and the improvement of its functionality can be addressed to:"
       mail_to: "storonaot@gmail.com"
+    about:
+      title: "About"
+      paragraph_1: "Expertise application is designed to collect user preferences count."
+      paragraph_2: "Members act as experts. Their opinion is very important for the expert community."
+      paragraph_3: "On the basis of the private opinions of experts calculated the average qualified rating."
+      paragraph_4: "The collected data in this application are of interest both for experts and for other organizations and users involved, for example, in marketing and market research."
+    help:
+      title: "Help"
+      paragraph_1: "Expertise user interface is built on the principle of \"single-application\". This greatly simplifies the user interaction with the application."
+      subtitle: "Basic steps"
+      item_1: "New User Registration. This is necessary to gain access to the service."
+      item_2: "If the user is registered, he must enter the site - sign in."
+      item_3: "First of all, you need to choose a topic for MDM expert intends to leave its estimates. Select a theme from the list, the user gets access to the image list."
+      item_4: "The user evaluates the requirements on the image on the screen by selecting the desired value on the scale of assessments."
+      item_5: "The display shows the average rating of all the experts who participated in the survey on the image on the chosen topic. And the total of all ratings on the site."
+      item_6: "You can view the final grades for all the images in the selected theme."
+    index:
+      title: "Welcome to Expertise"

@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'main/index'
-  get 'main/help'
-  get 'main/contacts'
-  get 'main/about'
+  # Serve websocket cable requests in-process
+  # mount ActionCable.server => '/cable'
+
+  resources :themes
+  resources :images
+  resources :values
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  
 
   match 'index', to: 'main#index', via: :get
   match 'help', to: 'main#help', via: :get
@@ -14,4 +19,7 @@ Rails.application.routes.draw do
   # root 'work#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  match 'signup',   to: 'users#new',            via: 'get'
+  match 'signin',   to: 'sessions#new',         via: 'get'
+  match 'signout',  to: 'sessions#destroy',     via: 'delete'
 end

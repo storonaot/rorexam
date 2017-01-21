@@ -1,4 +1,9 @@
 %footer
-  .x-container.x-footer-top
-    .x-footer-top__inner
-      %div Я футер
+  .x-container.x-footer
+    .x-footer__inner
+      %div.x-footer__copyrught Expertise &#169; 2017
+      %nav.x-footer__nav
+        = link_to t('.home'), root_path, class: ['x-footer__nav-item', current_page?(root_path) ? 'is-active' : '']
+        = link_to t('.about'), about_path, class: ['x-footer__nav-item', current_page?(about_path) ? 'is-active' : '']
+        = link_to t('.help'), help_path, class: ['x-footer__nav-item', current_page?(help_path) ? 'is-active' : '']
+        = link_to t('.contacts'), contacts_path, class: ['x-footer__nav-item', current_page?(contacts_path) ? 'is-active' : '']
