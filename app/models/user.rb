@@ -1,6 +1,5 @@
 class User < ApplicationRecord
 
-
   has_many :values, dependent: :destroy
 
   before_save { self.email = email.downcase }
@@ -18,11 +17,6 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }
 
   def self.all_cached
-    # ids = Rails.cache.fetch('User.all') do
-    #   User.all.pluck(:id)
-    # end
-    # User.find(ids)
-
     Rails.cache.fetch('User.all') { all }
   end
 

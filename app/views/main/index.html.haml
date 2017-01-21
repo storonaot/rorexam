@@ -1,8 +1,6 @@
--# .x-container.x-main
 %h1.like-h1=t ('.title')
 - if signed_in?
-  -# = link_to t('.start'), work_path, class: 'x-button is-center'
-  %button.x-button.is-center= t('.start')
+  = link_to t('.start'), work_path, class: "x-button"
 - else
   = link_to t('.log_in'), signin_path, class: 'x-button is-center'
   .x-serbor

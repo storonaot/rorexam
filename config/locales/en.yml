@@ -63,3 +63,6 @@ en:
       login_to_start: "Login to start"
       log_in: "Sign in"
       start: "Start"
+  work:
+    index:
+      def_select_theme: "Select theme to leave your answer"

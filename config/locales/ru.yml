@@ -63,3 +63,6 @@ ru:
       login_to_start: "Войдите, чтобы начать"
       log_in: "Войти"
       start: "Начать"
+  work:
+    index:
+      def_select_theme: "Дадададада"
