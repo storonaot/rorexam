@@ -1,12 +1,15 @@
-%p#notice= notice
+.x-dashboard
+  .x-dashboard__avatar
+    = gravatar_for @user
+  %ul.x-dashboard__info
+    %li.x-dashboard__info-item
+      = t('.name')
+      =':'
+      = @user.name
 
-%p
-  %b Name:
-  = @user.name
-%p
-  %b Email:
-  = @user.email
+    %li.x-dashboard__info-item
+      = t('.email')
+      =':'
+      = @user.email
 
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+%button.x-button=t('.start')

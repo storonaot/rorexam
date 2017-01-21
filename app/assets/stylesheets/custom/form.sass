@@ -1,0 +1,48 @@
+.x-form
+  &__errors
+    background-color: rgba(255, 0, 0, 0.2)
+    margin: 0 auto
+    margin-bottom: 20px
+    width: 40%
+    border: 1px solid rgba(255, 0, 0, 0.5)
+    padding: 20px
+  &__error
+    color: rgba(255, 0, 0, 0.5)
+    padding-bottom: 10px
+  &__fields
+    width: 40%
+    margin: 0 auto
+    padding: 30px 40px
+    border: 1px solid #694e41
+    margin-bottom: 50px
+  &__item
+    display: flex
+    flex-direction: column
+    margin-bottom: 15px
+    &:last-child
+      margin-bottom: 30px
+  &__label
+    margin-bottom: 5px
+    text-align: left
+  &__field
+    color: inherit
+    border: 1px solid transparent
+    padding: 5px 10px
+    font-size: inherit
+    &:focus
+      border-top-color: #694e41
+  &__actions
+    display: flex
+    justify-content: center
+    margin-top: 40px
+  &__footnote
+    margin-top: 20px
+    text-align: center
+
+.field_with_errors
+  width: 100%
+  .x-form__field
+    border-color: rgba(255, 0, 0, 0.5)
+    padding: 5px 10px
+    font-size: inherit
+    width: 100%

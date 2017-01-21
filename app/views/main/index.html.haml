@@ -1,7 +1,9 @@
 -# .x-container.x-main
 %h1.like-h1=t ('.title')
-%button.x-button.is-center Войти
--# %button.x-button.is-center Начать
-.x-serbor
--# .x-text-center Нажмите, чтобы начать
-.x-text-center Войдите, чтобы начать
+- if signed_in?
+  -# = link_to t('.start'), work_path, class: 'x-button is-center'
+  %button.x-button.is-center= t('.start')
+- else
+  = link_to t('.log_in'), signin_path, class: 'x-button is-center'
+  .x-serbor
+  .x-text-center= t('.login_to_start')

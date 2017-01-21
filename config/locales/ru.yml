@@ -15,6 +15,27 @@ ru:
       contacts: "Контакты"
       home: "Главная"
       help: "Помощь"
+  sessions:
+    new:
+      sign_up: "Регистрация"
+      sign_in: "Вход"
+      email: "E-mail"
+      password: "Пароль"
+      new_user?: "Еще не зарегестрированы?"
+  users:
+    form:
+      name: "Имя"
+      email: "E-mail"
+      password: "Пароль"
+      password_confirmation: "Подтверждение пароля"
+      create_account: "Создать аккаунт"
+    new:
+      sign_up: "Регистрация"
+      home_back: "На главную"
+    show:
+      start: "Начать"
+      email: "Email"
+      name: "Имя"
   main:
     contacts:
       title: "Контакты"
@@ -39,3 +60,6 @@ ru:
       item_6: "Имеется возможность просмотра итоговых оценок по всем изображениям на выбранную тему."
     index:
       title: "Добро пожаловать в Expertise"
+      login_to_start: "Войдите, чтобы начать"
+      log_in: "Войти"
+      start: "Начать"
