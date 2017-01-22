@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         sign_in user
         redirect_to work_url
       else
-        # flash.now[:alert] = 'Login failed. Invalid email/password combination. Repeat'
+        flash.now[:alert] = 'Login failed. Invalid email/password combination. Repeat'
         render 'new'
       end
     end

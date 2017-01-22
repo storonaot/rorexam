@@ -1,12 +1,13 @@
 !!!
 %html
   %head
-    %title Rorexam
+    -# %title Rorexam
+    %title= "#{full_title(yield(:title))}"
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     %link(href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:300,400,700&amp;subset=cyrillic" rel="stylesheet")
     %link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet")
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
   %body.x-body
     .x-wrapper
       = render 'shared/header'

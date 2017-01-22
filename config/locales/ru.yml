@@ -30,9 +30,11 @@ ru:
       password_confirmation: "Подтверждение пароля"
       create_account: "Создать аккаунт"
     new:
+      title: "Регистрация"
       sign_up: "Регистрация"
       home_back: "На главную"
     show:
+      title: "Личный кабинет"
       start: "Начать"
       email: "Email"
       name: "Имя"
@@ -65,4 +67,26 @@ ru:
       start: "Начать"
   work:
     index:
-      def_select_theme: "Дадададада"
+      title: "Expertise"
+      select_theme: "Выберите тему, чтобы начать"
+    choose_theme_from_arr:
+      select_theme: "Выберите тему"
+    choose_theme:
+      select_theme: "Выберите тему"
+    button_theme_select:
+      select_theme: "Выбрать тему"
+
+    button_list_results:
+      results_list: "Результаты"
+    display_theme:
+      select_theme: "Выберите тему, чтобы начать"
+    images:
+      common_value: "Средняя оценка"
+      total_values: "Всего оценок"
+      make_decision: "Выберите свою оценку"
+      save_decision: "Сохранить"
+    results_list:
+      no_values: "Результаты по выбранной теме отсутствуют..."
+      select_theme: "Выберите другую тему"
+      return_to_main: "Назад к Экспертизе"
+      title: "Перейдите к выбору темы"

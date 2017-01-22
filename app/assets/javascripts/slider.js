@@ -2,7 +2,8 @@
 
 function updateSlider(slideAmount) {
   //get the element
-  var displayValue = document.getElementById("chosen_value");
+  var displayValue = document.querySelector(".js-range-value");
+  console.log('displayValue', displayValue);
   //show the amount
   console.log("IN updateSlider:  - slideAmount = " + slideAmount );
   displayValue.innerHTML = slideAmount;

@@ -1,68 +1,31 @@
-.image
-  .row
-    .col-md-3
-      .left_controls
-        .select_theme
-          = render 'work/button_theme_select', locale: @current_locale
-          %br
-        .modal_list_results
-          = render 'work/button_list_results'
-          %br
-
-        %span.common_value
+.x-work
+  %h2.like-h2.js-theme-title #{@selected_theme}
+  .x-work__wrapper
+    .x-work__slider
+      %span.x-work__image-name.js-image-name #{@selected_image_name}
+      .x-work__arrow.x-work__arrow--left.js-arrow-left
+      .js-image
+        %img.x-work__image{:alt => "Default Image", :src => 'assets/pictures/default.png', :title => "Default image"}
+      .x-work__arrow.x-work__arrow--right.js-arrow-right
+      .x-work__user-value.js-user-value{:title => "Expert value"}
+    .x-work__sidebar
+      .x-work__button-wrapper.js-select-theme
+        = render 'work/button_theme_select', locale: @current_locale
+      .x-work__button-wrapper.js-results-button
+        = render 'work/button_list_results'
+      .x-serbor.is-dark
+      %div
+        .x-work__common.js-common
           = t('.common_value')
-          %h2.common{:title => "Common value"}
-        %span.total_values
-          = t('.total_values')
-          %h2.total{:title => "Total values"} #{@values_qty.round}
-      -#
-      -# .brainlook
-      -#   %a{:href => "http://www.brainlook.org"}
-      -#     %img{:alt => "Share to Brainlook", :src => "assets/brainlook_logo.png", :title => "Braonlook",:style => "width:28%;" }
-      -#     %p{:title => "Braonlook"}
-      -#       = t('.share_opinion')
-
-    .col-md-9
-      .image_display
-
-        .row.image
-          .col-md-12
-            %h2.up-theme{:title => t('.theme_name')}
-              #{@selected_theme}
-
-          .col-md-12
-            %h2.up{:title => "Image file name"}
-              #{@selected_image_name}
-
-          .col-md-1
-            .img-left-side
-              %h3{:title => "list to previous image"}
-                %i.fa.fa-chevron-circle-left.strong
-
-          .col-md-10
-            .img-center{:title => "Default image"}
-              %img{:alt => "Default Image", :src => 'assets/pictures/default.png', :title => "Default image",:style => "width:100%; height:100%;" }
-              .image_user_value{:title => "Expert value"}
-
-          .col-md-1
-            .img-right-side
-              %h3{:title => "list to next image"}
-                %i.fa.fa-chevron-circle-right
-
-        .row.diag
-          .col-md-12
-            .image_diag
-              #chosen_value 50
-              %h2.down{:title => "Value scale"}
-                = t(".make_decision")
-              %button.button__results.save{:title => "Save image diag results"}
-                %a{"data-remote" => "true", :format => "js", :href => "#", :title => "Save image diag results"}
-                  = t(".save_decision")
-
-              %p.left 5%
-              #slider
-                %input#slide{:max => "100", :min => "5", :value => "50",
-                             :onchange => "updateSlider(this.value)",
-                             :step => "5", :type => "range"}
-              %p.right 100%
-              %br
+          %span.x-work__common-value.js-common-value
+      .x-work__range.js-range
+        %span.x-work__range-title= t('.make_decision')
+        .x-work__range-slider
+          .x-work__range-item 0
+          %input{:max => "100", :min => "0", :value => "0",
+                       :onchange => "updateSlider(this.value)",
+                       :step => "5", :type => "range"}
+          .x-work__range-item 100
+        .x-work__range-value.js-range-value 0
+        %a.x-button.x-button--dark.js-save{"data-remote" => "true", :format => "js", :href => "#", :title => "Save image diag results"}
+          = t('.save_decision')

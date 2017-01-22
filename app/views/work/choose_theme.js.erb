@@ -1,20 +1,30 @@
-console.log("IN choose_theme.js" );
+// console.log("IN choose_theme.js" );
 
 $('.image .image_display .image_diag').css({"display": "none"});
 $('.img-left-side').css({"display": "none"});
 $('.img-right-side').css({"display": "none"});
 
 
-$(document).click(function(e){
-  if($(e.target).is(".select_theme") || $(e.target).closest(".select_theme").length) {
-      console.log(": In doc.click = IN side content area"  );
+$(document).click(function(e) {
+  //new
+  if ($(e.target).is('.js-select-theme') || $(e.target).closest('.js-select-theme').length) {
+    console.log("click inside");
+  } else {
+    $('.js-theme-select').css({"display": "none"}); //old
+    $('.js-select-theme').empty().html("<%= j render 'work/button_theme_select' -%>");
   }
-  else {
-    console.log(": In doc.click = OUT side content area"  );
-    $('.form_select').css({"display": "none"});
-    $('.select_theme').empty().html("<%= j render 'work/button_theme_select' -%>");
-  }
+
+  //old
+  // if($(e.target).is('.select_theme') || $(e.target).closest('.select_theme').length) {
+  //     console.log(": In doc.click = IN side content area"  );
+  // }
+  // else {
+  //   console.log(": In doc.click = OUT side content area"  );
+  //   $('.form_select').css({"display": "none"});
+  //   $('.select_theme').empty().html("<%= j render 'work/button_theme_select' -%>"); //old
+  // }
 });
 
 
-$('.select_theme').empty().html("<%= j render 'choose_theme_from_arr' -%>");
+// $('.select_theme').empty().html("<%= j render 'choose_theme_from_arr' -%>"); //old
+$('.js-select-theme').empty().html("<%= j render 'choose_theme_from_arr' -%>"); //new

@@ -19,7 +19,7 @@ module Api
 
       respond_to do |format|
         if new_image_index.blank?
-          format.html {  render nothing: true, status: :unprocessable_entity }
+          format.html { render nothing: true, status: :unprocessable_entity }
           format.json {}
         else
           format.html { render display_theme_path, status: :successfully }
