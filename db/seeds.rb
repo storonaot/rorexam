@@ -20,7 +20,7 @@ Image.create([
   { name: 'Симпсоны', file: 'the_simpsons.jpg', theme_id: 4 },
   { name: 'Футурама', file: 'futurama.jpg', theme_id: 4 },
   { name: 'Гравити Фолз', file: 'gravity_falls.jpg', theme_id: 4 },
-  { name: 'Рик и Морти', file: 'rick_and_morty.jpg', theme_id: 4 },
+  { name: 'Рик и Морти', file: 'rick_and_morty.png', theme_id: 4 },
   { name: 'По ту сторону изгороди', file: 'over_the_garden_wall.jpg', theme_id: 4 },
   { name: 'Время приключений', file: 'adventure_time_with_finn&jake.jpg', theme_id: 4 },
   { name: 'Тюряга', file: 'superjail.jpg', theme_id: 4 },

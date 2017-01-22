@@ -4,58 +4,45 @@ $('.left_controls span.total_values h2.total').append().html(valuesQty);
 // show theme
 var selectedTheme = '<%= @image_data[:theme] %>';
 
-if(selectedTheme === 'Выберите тему, чтобы начать' || selectedTheme === 'Select theme to leave your answer' || selectedTheme === "") {
-  $('.js-arrow-left').css({"display": "none"});
-
-  $('.js-arrow-right').css({"display": "none"});
-
-  $('.js-range').css({"display": "none"});
-
+if (selectedTheme === 'Выберите тему, чтобы начать' || selectedTheme === 'Select theme to leave your answer' || selectedTheme === '') {
+  $('.js-arrow-left').css({'display': 'none'});
+  $('.js-arrow-right').css({'display': 'none'});
+  $('.js-range').css({'display': 'none'});
 } else {
-  $('.js-arrow-left').css({"display": "block"});
-  $('.js-arrow-right').css({"display": "block"});
-  $('.js-range').css({"display": "block"});
-
+  $('.js-arrow-left').css({'display': 'block'});
+  $('.js-arrow-right').css({'display': 'block'});
+  $('.js-range').css({'display': 'block'});
 }
+
 var userValuedImage = '<%= @image_data[:user_valued] %>';
 
-if(userValuedImage == 1){
-  $('.js-common').css({"display": "flex"});
-
-  $('.js-range').css({"display": "none"});
-
+if (userValuedImage == 1) {
+  $('.js-common').css({'display': 'flex'});
+  $('.js-range').css({'display': 'none'});
   var imageCommonValue = '<%= @image_data[:common_ave_value] %>';
   $('.js-common-value').append().html(imageCommonValue);
-
-
   var imageValue = '<%= @image_data[:value] %>';
-  $('.js-user-value').append().html(imageValue).css({"display": "block"});
-}else{
-  $('.js-common').css({"display": "none"});
-
-  $('.js-user-value').css({"display": "none"});
-
+  $('.js-user-value').append().html(imageValue).css({'display': 'block'});
+} else {
+  $('.js-common').css({'display': 'none'});
+  $('.js-user-value').css({'display': 'none'});
 }
 
 var currentUserId = '<%= @image_data[:current_user_id] %>';
 
 $('.js-theme-title').append().html(selectedTheme);
 
-
 //restore button
-$('.js-select-theme').empty().html("<%= j render 'work/button_theme_select' -%>");
-
+$('.js-select-theme').empty().html('<%= j render 'work/button_theme_select' -%>');
 
 // new
 // показываем кнопку результатов, если тема выбрана
 // скрываем, если не выбрана
 $('.js-results-button').css({'display': 'none'})
 var titleText = $('.js-theme-title').text()
-if(titleText !== 'Выберите тему, чтобы начать' && titleText !== 'Select theme to leave your answer') {
-  console.log('да');
+if (titleText !== 'Выберите тему, чтобы начать' && titleText !== 'Select theme to leave your answer') {
   $('.js-results-button').css({'display': 'block'})
 }
-
 
 // get data from controller
 var imageCurrentIndex = '<%= @image_data[:index] %>';
@@ -67,17 +54,12 @@ var selectedThemeId = '<%= @image_data[:theme_id] %>';
 
 if (oneImageName !== '') {
   $('.js-image-name').append().html(oneImageName).css({'display': 'block'});
-
 }
 
-
 // show image
-var pathImage = "assets/pictures/" + oneImageFile;
-$(".js-image").attr({title: "Selected image" });
-
-$(".js-image img").attr({alt: "Selected Image", src: pathImage, title: "Selected image" });
-
-
+var pathImage = 'assets/pictures/' + oneImageFile;
+$('.js-image').attr({title: 'Selected image' });
+$('.js-image img').attr({alt: 'Selected Image', src: pathImage, title: 'Selected image' });
 
 // AJAX call to next image list
 $('.js-arrow-right').click(function(event) {
@@ -85,8 +67,8 @@ $('.js-arrow-right').click(function(event) {
   event.stopImmediatePropagation(); // would stop the event from bubbling to parent elements,
 
   $.ajax({
-    type: "get",
-    url: "api/next_image",
+    type: 'get',
+    url: 'api/next_image',
     data: { index: imageCurrentIndex,
             theme_id: selectedThemeId,
             length: themeImagesSize },
@@ -97,52 +79,33 @@ $('.js-arrow-right').click(function(event) {
         oneImageFile = data_return.file;
         oneImageId = data_return.image_id;
         $('.js-image-name').append().html(oneImageName).css({'display': 'block'});
-
-        var pathImage = "assets/pictures/" + oneImageFile;
-        $(".js-image").attr({title: "Selected image" });
-
-        $(".js-image img").attr({alt: "Selected Image", src: pathImage, title: "Selected image" });
-
-
+        var pathImage = 'assets/pictures/' + oneImageFile;
+        $('.js-image').attr({title: 'Selected image' });
+        $('.js-image img').attr({alt: 'Selected Image', src: pathImage, title: 'Selected image' });
         var userValuedFlag = data_return.user_valued;
-        if(userValuedFlag  == 1){
-          $('.js-common').css({"display": "flex"});
-
+        if (userValuedFlag  == 1) {
+          $('.js-common').css({'display': 'flex'});
           var imageValue = data_return.value;
-          $('.js-user-value').append().html(imageValue).css({"display": "block"});
-
-          $('.js-range').css({"display": "none"});
-
-
+          $('.js-user-value').append().html(imageValue).css({'display': 'block'});
+          $('.js-range').css({'display': 'none'});
           var imageCommonValue = data_return.common_ave_value;
           $('.js-common-value').append().html(imageCommonValue);
-
-
-        }else{
-          $('.js-common').css({"display": "none"});
-
-          $('.js-user-value').css({"display": "none"});
-
-          $('.js-range').css({"display": "block"});
-
+        } else {
+          $('.js-common').css({'display': 'none'});
+          $('.js-user-value').css({'display': 'none'});
+          $('.js-range').css({'display': 'block'});
         }
-
       })
       .fail(function (data_return) {
-        console.log("error: data_return = " + data_return);
+        console.log('error: data_return = ' + data_return);
       });
 });
 
-
-
-// AJAX call to previous image list
 $('.js-arrow-left').click(function(event) {
-
-  event.stopImmediatePropagation(); // would stop the event from bubbling to parent elements,
-
+  event.stopImmediatePropagation();
   $.ajax({
-    type: "get",
-    url: "api/prev_image",
+    type: 'get',
+    url: 'api/prev_image',
     data: { index: imageCurrentIndex,
       theme_id: selectedThemeId,
       length: themeImagesSize },
@@ -152,92 +115,60 @@ $('.js-arrow-left').click(function(event) {
         oneImageName = data_return.name;
         oneImageFile = data_return.file;
         oneImageId = data_return.image_id;
-
         $('.js-image-name').append().html(oneImageName).css({'display': 'block'});
-
-        var pathImage = "assets/pictures/" + oneImageFile;
-        $(".js-image").attr({title: "Selected image" });
-
-        $(".js-image img").attr({alt: "Selected Image", src: pathImage, title: "Selected image" });
-
-
+        var pathImage = 'assets/pictures/' + oneImageFile;
+        $('.js-image').attr({title: 'Selected image' });
+        $('.js-image img').attr({alt: 'Selected Image', src: pathImage, title: 'Selected image' });
         var userValuedFlag = data_return.user_valued;
-        if(userValuedFlag  == 1){
-          $('.js-common').css({"display": "flex"});
-
+        if (userValuedFlag  == 1) {
+          $('.js-common').css({'display': 'flex'});
           var imageValue = data_return.value;
           $('.js-user-value').append().html(imageValue);
-
-          $('.js-range').css({"display": "none"});
-
+          $('.js-range').css({'display': 'none'});
           var imageCommonValue = data_return.common_ave_value;
           $('.js-common-value').append().html(imageCommonValue);
-
-          $('.js-user-value').css({"display": "block"});
-
-        }else{
-          $('.js-common').css({"display": "none"});
-
-          $('.js-user-value').css({"display": "none"});
-
-          $('.js-range').css({"display": "block"});
-
-
+          $('.js-user-value').css({'display': 'block'});
+        } else {
+          $('.js-common').css({'display': 'none'});
+          $('.js-user-value').css({'display': 'none'});
+          $('.js-range').css({'display': 'block'});
         }
       })
       .fail(function (data_return) {
-        console.log("error: data_return = " + data_return);
+        console.log('error: data_return = ' + data_return);
       });
-
 });
 
-
 // AJAX call to next image list
-$('.js-save').unbind( "click" ).click(function(event) {
-
-  console.log("clicked: button__results.save: ");
+$('.js-save').unbind( 'click' ).click(function(event) {
   event.stopImmediatePropagation(); // would stop the event from bubbling to parent elements,
   var displayValue = $('.js-range-value')[0].innerHTML;
-  console.log("displayValue = " + displayValue );
-
   $.ajax({
-    type: "get",
-    url: "api/save_value",
+    type: 'get',
+    url: 'api/save_value',
     data: { image_id: oneImageId,
             theme_id: selectedThemeId,
             value: displayValue
     },
     dataType: 'json'
   }).done(function (data_return) {
-        console.log("success1c:  " + data_return.notice );
         var userImageValue = data_return.user_value;
         $('.js-user-value').append().html(userImageValue);
-
-
         var userValuedFlag = data_return.user_valued;
-        if(userValuedFlag  == 1){
-          $('.js-common').css({"display": "flex"});
-
-          $('.js-range').css({"display": "none"});
-
-
+        if (userValuedFlag  == 1) {
+          $('.js-common').css({'display': 'flex'});
+          $('.js-range').css({'display': 'none'});
           var valuesQty = data_return.values_qty;
           $('.left_controls span.total_values h2.total').append().html(valuesQty);
-
           var imageCommonValue = data_return.common_ave_value;
           $('.js-common-value').append().html(imageCommonValue);
-
-
-          $('.js-user-value').css({"display": "block"});
-
-        }else{
-          $('.js-common').css({"display": "none"});
-
-          $('.js-range').css({"display": "block"});
-
+          $('.js-user-value').css({'display': 'block'});
+        } else {
+          $('.js-common').css({'display': 'none'});
+          $('.js-range').css({'display': 'block'});
         }
       })
-      .fail(function (data_return) {
-        console.log("error: data_return = " + data_return);
-      });
+    .fail(function (data_return) {
+      console.log('error: data_return = ' + data_return);
+    });
 });
