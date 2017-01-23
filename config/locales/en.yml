@@ -85,7 +85,12 @@ en:
       make_decision: "Make your decision"
       save_decision: "Save"
     results_list:
+      my_ratings: "My ratings"
       no_values: "No Values results for selected theme..."
       select_theme: "Select other theme"
       return_to_main: "Return to Expertise"
       title: "Go to work area"
+      image_name: "Image name"
+      image: "Image"
+      value: "Value"
+      date: "Date"

@@ -77,7 +77,7 @@ ru:
       select_theme: "Выбрать тему"
 
     button_list_results:
-      results_list: "Результаты"
+      results_list: "Мои оценки"
     display_theme:
       select_theme: "Выберите тему, чтобы начать"
     images:
@@ -86,7 +86,12 @@ ru:
       make_decision: "Выберите свою оценку"
       save_decision: "Сохранить"
     results_list:
+      my_ratings: "Мои оценки"
       no_values: "Результаты по выбранной теме отсутствуют..."
       select_theme: "Выберите другую тему"
       return_to_main: "Назад к Экспертизе"
       title: "Перейдите к выбору темы"
+      image_name: "Название"
+      image: "Изображение"
+      value: "Оценка"
+      date: "Дата"
